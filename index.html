@@ -331,11 +331,8 @@
                                 <li><a href='#iosfacebookLogin'>Authenticate Using Facebook Login on iOS with Firebase.</a></li>
                                 <li><a href='#iosappleSign'>Authentication Using Sign in with Apple with Firebase</a></li>
                                 <li><a href='#iosinAppPurchase'>How to Add / Change In-App purchase Ids and Coins in app?</a></li>
-                                <li><a href="#iossysConfig">How to Configure System? ( How to Set App Link , Link for More Apps of Your own , Maintain Your App Version , Text to Share App , TimeZone )</a></li>
-                                <li><a href="#iosenableMode">How to Enable / Disable Language Mode Or Option E Mode Or Force Update App Or Daily Quiz Mode Or Contest Mode Or Learning Zone Mode Or Maths Quiz Mode?</a></li>
-                                <li><a href="#iossysConfig2"> Where to Set Refer Coin, Earn Coin, Reward Coin, Answer mode,Fix Question per Level & True or False Value ? </a></li>
-                                <li><a href="#iossysConfig3"> Where to Set Random / Group Battle with Category Or without Category Selection? & Also Enable / Disable In-App Purchase? </a></li>
-                                <li><a href="#iossysConfig4"> Where to Set About Us, Instructions , Terms Conditions and privacy Policy ? </a></li>
+                                <li><a href="#iossysConfig">How to Configure System? ( How to Set App Link , Link for More Apps of Your own , Maintain Your App Version , Text to Share App , TimeZone , etc. )</a></li>
+                                <li><a href="#iostextfiles"> Where to Set About Us, Instructions , Terms Conditions and privacy Policy ? </a></li>
                                 <li><a href='#ioslevelComplete'>Want to costomize some values?</a></li>
                                 <li><a href='#ioshomeScreenValues'>Want to costomize Home Screen Runtime values?</a></li>
                                 <li><a href='#iosSettingAlert'>Want to costomize Setting Alert? like remove Background music Or any other option From Settings?</a></li>
@@ -345,6 +342,7 @@
                                 <li><a href='#iosnotification'>How to Set Notification Settings?</a></li>
                                 <li><a href='#iosdailyquiz'>How to Set Daily Quiz Settings?</a></li>
                                 <li><a href='#ioscontest'>How to Set Contest Settings?</a></li>
+                                <li><a href='#iosmaintenance'>How to change Maintenance Alert GIF?</a></li>
                                 <li><a href='#iosnote'>Note</a></li>
                             </ol>
                         </div>
@@ -354,7 +352,7 @@
                                 <h3>How to run Code?</h3>
                                 <ul>
                                     <li>Open Terminal > write command <b>cd [Path Of Quiz Project]</b> & Press Enter & just Install Pods by using Command <b>pod install</b> </li>
-                                    <li>go to Quiz in Finder > Open <b>Quiz.xcworkspace</b> File</li>
+                                    <li>go to Quiz in Finder > Open <b>Quiz.xcworkspace</b> File in Xcode</li>
                                 </ul>
                                 <div class="section_bdr"></div>
                             </div>
@@ -511,96 +509,74 @@
 
                         <section id="iossysConfig">
                             <div class="container">
-                                <h2>How to Configure System? (How to Set App Link , More Apps of Your own , Maintain Your App Version , Text to Share App , TimeZone )</h2>
+                                <h2>How to Configure System? (How to Set App Link , More Apps of Your own , Maintain Your App Version , Text to Share App , TimeZone , etc. )</h2>
 
 
                                 <li>go to Admin Panel > Settings > System Configurations </li>
-                                1. System Timezone As Per your Requirement.</br>
-                                2. iOS App Link.</br>
-                                3. More App Links - Link of Your Apple Store Profile to find Your Other apps.</br>
-                                4. App Version.</br>
-                                5. Custom Share App text.</br>
-                                Don't forget to click <b>Save Settings</b>.</li><br>
-
-
-                                <a href="#iosadmin"><img src="images/ios/sysConfig.png"></a><br>
+                                <li>Code handled in <b>Quiz > SystemConfig.swift</b> File  </li><br>
+                                <!-- 1. <b>System Timezone</b> As Per your Requirement.</br>
+                                2. <b>iOS App Link</b></br>
+                                3. <b>More Apps Link (iOS)</b> - Link of Your AppStore Profile to find Your Other apps.</br>
+                                4. <b>Refer Coin</b></br>
+                                5. <b>Earn Coin</b> - Admin can set values of Refer Coin for A Friend Who uses your Refer Code & Earn Coin for User whose Refer Code is going to be used by Friends.</br>
+                                6. <b>Reward Coin</b> - As it's name suggests, here you can set value of Coins to be earned by watching Reward Ads during Play Quiz.</br>
+                                7. <b>App Version</b></br>
+                                8. <b>True & False Value</b> - Incase You are using specific Language other than English, Then you can set Values for True Or False. </br>
+                                9. <b>Answer Display</b> - Enable this If you want users to see Correct Answer while they choose Wrong one from Given Options.</br>
+                                10. <b>Language Mode</b></br>
+                                11. <b>Option E Mode</b></br>
+                                12. <b>Force Update</b> - You can enable / disable Force App Version Update Dialogue in your App.</br>
+                                Make Sure none of fields are blank here, even if You don't have any specific value, then You can put any dummy value for testing too.</br>
+                                13. <b>Daily Quiz Mode</b></br>
+                                14. <b>Contest Mode</b></br>
+                                15. <b>Random Battle Category Mode</b></br>
+                                16. <b>Group Battle Category Mode</b></br>
+                                17. <b>In-App Purchase</b></br>
+                                18. <b>Learning Zone Mode</b></br>
+                                19. <b>Maths Mode</b></br>
+                                20. <b>True/False Mode</b></br>
+                                21. <b>Fix Questions in Level and Total Number of Questions per Level</b> - Enable this If you want Fix Number of Questions for Every Level and If You are enabling it, it will set Limit for all Level Questions as the Value You Add in Total Question per Level here.</br>
+                                22. <b>App Maintenance & App Maintenance Message</b></br>
+                                23. <b>Custom Share App text</b></br>
+                                23. <b>System Setting for iOS Ads</b> - you can choose Fb /  Google Admob Ads & add Banner, Interstitial, Reward & Open Ads[for Admob Only] Ids here. NOTE: Admob App ID should be entered in info.plist only.</br>
+                                24. <b>Social Media Links</b> - Add Instagram,FB & Youtube Link of your Own & it will be reflected in MoreOptions.swift file there. </br> -->
+                                -> <b>System Timezone</b> - As Per your Requirement.</br>
+                                -> <b>iOS App Link</b> - Link of Your AppStore App(you will get it Once your App is Live on Appstore).</br>
+                                -> <b>More Apps Link (iOS)</b> - Link of Your AppStore Profile to find Your Other apps.</br>
+                                -> <b>Refer Coin</b> & <b>Earn Coin</b> - Admin can set values of Refer Coin for A Friend Who uses your Refer Code & Earn Coin for User whose Refer Code is going to be used by Friends.</br>
+                                -> <b>Reward Coin</b> - As it's name suggests, here you can set value of Coins to be earned by watching Reward Ads during Play Quiz.</br>
+                                -> <b>App Version</b> - Admin can set current Version of App for Force Update as it takes latest version from Appstore.</br>
+                                -> <b>Force Update</b> - You can enable / disable Force App Version Update Dialogue in your App.</br>
+                                -> <b>True & False Value</b> - Incase You are using specific Language other than English, Then you can set Values for True & False here.</br>
+                                -> <b>Answer Display</b> - Enable this If you want users to see Correct Answer while they choose Wrong one from Given Options.</br>
+                                -> <b>Language Mode</b> - Enable / Disable Language in your App</br>
+                                -> <b>Option E Mode</b> - Enable / Disable Option E in your App</br>
+                                -> <b>Daily Quiz Mode</b> - Enable / Disable Daily Quiz in your App</br>
+                                -> <b>Contest Mode</b> - Enable / Disable Contest in your App</br>
+                                -> <b>Random Battle Category Mode</b> - Enable / Disable Category for Random Battle in your App</br>
+                                -> <b>Group Battle Category Mode</b> - Enable / Disable Category for Group Battle in your App</br>
+                                -> <b>In-App Purchase</b> - Enable / Disable In-App Purchase in your App</br>
+                                -> <b>Learning Zone Mode</b> - Enable / Disable Learning Zone in your App</br>
+                                -> <b>Maths Mode</b> - Enable / Disable Maths Quiz in your App</br>
+                                -> <b>True/False Mode</b> - Enable / Disable True/False Quiz in your App</br>
+                                -> <b>Fix Questions in Level and Total Number of Questions per Level</b> - Enable this If you want Fix Number of Questions for Every Level and If You are enabling it, it will set Limit for all Level Questions as the Value You Add in Total Question per Level here.</br>
+                                -> <b>App Maintenance & App Maintenance Message</b> - Admin can enable it when there is some Process Running @ admin panel & users are not supposed to Opeate App @ that time. & Admin should add message for Maintenance, which will be visible on App & user will be able to Operate App once App Maintenance is Disabled from here.</br>
+                                -> <b>Custom Share App text</b> - This Text will be used when your app user shares App.</br>
+                                -> <b>System Setting for iOS Ads</b> - you can choose Fb /  Google Admob Ads & add Banner, Interstitial, Reward & Open Ads[for Admob Only] Ids here. NOTE: Admob App ID should be entered in info.plist only.</br>
+                                -> <b>Social Media Links</b> - Add Instagram,Facebook & Youtube Link of your Own & it will be reflected in MoreOptions.swift file there. </br>
+                                Make Sure none of fields are blank here, even if You don't have any specific value, then You can put any dummy value for testing too.</br>
+                                @ the End, Don't forget to click <b>Save Settings</b>.</li><br>
+                                
+                                
+                                <a href="#iosadmin"><img src="images/ios/systemConfig.png"></a><br>
                                 <br>
                                 </p>
-
                                 <div class="section_bdr"></div>
-
                                 </ul>
                             </div>
                         </section>
 
-
-                        <section id="iosenableMode">
-                            <div class="container">
-                                <h2>How to Enable / Disable Language Mode Or Option E Mode Or Force Update App Or Daily Quiz Mode Or Contest Mode Or Learning Zone Mode Or Maths Quiz Mode?</h2>
-
-
-                                <li>go to Admin Panel > Settings > System Configurations. </li><br>
-                                <li>Code handled in <b>SystemConfig.swift</b> File  </li><br>
-
-                                <div class="section_bdr"></div>
-
-                                </ul>
-                            </div>
-                        </section>
-
-
-                        <section id="iossysConfig2">
-                            <div class="container">
-                                <h2> Where to Set Refer Coin, Earn Coin, Reward Coin, Answer mode,Fix Question per Level & True or False Value ? </h2>
-
-
-                                <li>Now Admin can set values of Refer Coin for A Friend Who uses your Refer Code & Earn Coin for User whose Refer Code is going to be used by Friends. <br> We have also <b>added True / False Questions</b> As we have added <b>Option E</b> In Previous Update </li>
-                                <li>Go to Admin Panel > Settings > System Configurations </li>
-                                1. Refer Coin </br>
-                                2. Earn Coin </br>
-                                3. Reward Coin - As it's name suggests, here you can set value of Coins to be earned by watching Reward Ads During Play Quiz.</br>
-                                4. Answer Display - Enable this If you want users to see Correct Answer while they choose Wrong one from Given Options.</br>
-                                5. Fix Question in Level and Total Question per Level - Enable this If you want Fix Number of Questions for Every Level and If You are enabling it, it will set Limit for all Level Questions as the One You Select in Total Question per Level here.</br>
-                                6. True Or False Value - Incase You are using specific Language other than English, Then you can set Values for True Or False. </br>
-                                7. Force Update - You can enable / disable Force App Version Update Dialogue in your App.</br>
-                                Make Sure none of fields are blank here, even if You don't have any specific value, then You can put any dummy value for testing too.<br>
-                                Don't forget to click <b>Save Settings</b>.</li><br>
-
-
-                                <a href="#admin"><img src="images/ios/sysConfig2.png"></a><br>
-                                <br>
-                                </p>
-
-                                <div class="section_bdr"></div>
-
-                                </ul>
-                            </div>
-                        </section>
-
-                        <section id="iossysConfig3">
-                            <div class="container">
-                                <h2> Where to Set Random / Group Battle with Category Or without Category Selection? & Also Enable / Disable In-App Purchase?  </h2>
-
-
-                                <li>Now Admin can set values for  Random Battle / Group Battle with Selected Category Or With just Random Category & In-App Purchase as well.</li>
-                                <li>Go to Admin Panel > Settings > System Configurations </li>
-                                1. Battle Random Category Mode </br>
-                                2. Battle Group Category Mode </br>
-                                3. In-App Puchase</br>
-                                Don't forget to click <b>Save Settings</b>.</li><br>
-
-
-                                <a href="#admin"><img src="images/ios/sysConfig3.png"></a><br>
-                                <br>
-                                </p>
-
-                                <div class="section_bdr"></div>
-
-                                </ul>
-                            </div>
-                        </section>
-
-                        <section id="iossysConfig4">
+                        <section id="iostextfiles">
                             <div class="container">
                                 <h2> Where to Set About Us, Instructions , Terms Conditions and privacy Policy ?  </h2>
 
@@ -806,6 +782,18 @@
                                 </ul>
                             </div>
                         </section>
+                        
+                        
+                        <section id="iosmaintenance">
+                            <div class="container"> <br>
+                                <h2>How to change Maintenance Alert GIF?</h2>
+                                <b>In Quiz-Online > Quiz > AlertView > MaintenanceAlert.swift file</b></br>
+                                <li>go to MaintenanceAlert & just Replace file in Quiz-Online > Quiz > MAINTENANCE_GIF folder OR You can Change name of GIF according to your Filename there</li>
+                                <a href="#appname"><img src="images/ios/maintenanceAlert.png"></a><br><br>
+                                <div class="section_bdr"></div>
+                                </ul>
+                            </div>
+                        </section>
 
 
                         <section id = "iosnote"><br>
@@ -823,8 +811,7 @@
                     <div class="container">
                         <h3>Need Support?</h3>
                         <p>Its our pleasure to serve our service and support. please contact our support team.</p>
-                        <p>Android Head of Customer Support : Kishan Mevada <a href="https://join.skype.com/invite/vSHBqBXIDPzO" target="_blank" style='color:#3c55d1'>Skype Name :  Kishan Mevada</a></p>
-                        <p>IOS Head of Customer Support : Devanshi Gor <a href="https://join.skype.com/invite/qrIHyaH38j1n" target="_blank" style='color:#3c55d1'>Skype Name :  Devanshi Gor</a></p>
+                        <p>Customer Support : <a href="https://join.skype.com/invite/qrIHyaH38j1n" target="_blank" style='color:#3c55d1'>Skype Name :  Devanshi Gor</a></p>
                         <p>To help our customers, we constantly be in touch with every customer if they need any assistance regarding our product. 
                             We offer our customers a support from  <strong> Mon – Fri 9.00am to 6.00pm IST (GMT +5.30) – We are a Team located in India – Asia.</strong></p>
                         <p>Typically we reply our customers for all the questions and queries within 24 hours of time via comments, support forum or emails.</p>
@@ -843,7 +830,7 @@
                 <section id="contactus">
                     <div class="container">
                         <h3>Contact Us</h3>
-                        <p>WRTeam has creative and dedicated group of developers who are mastered in Apps Developments and Web Application Development with a niche in delivering quality solutions to customers across the globe.
+                        <p>WRTeam has creative and dedicated group of developers who are mastered in Mobile Application Development and Web Application Development with a niche in delivering quality solutions to customers across the globe.
                             Contact us today to find out how we can help you or for freelance work.
                         <p>Visit Us : <a href="https://wrteam.in/" target="_blank"><span style="color:#0e8bcb;">https://wrteam.in</span> </a>
                         <p>Mail Us : support@wrteam.in</p>
