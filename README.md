@@ -1,1 +1,1 @@
-# Quiz_Online_IOS_Doc Version 7.0.5
+# Quiz_Online_IOS_Doc Version 7.0.6
