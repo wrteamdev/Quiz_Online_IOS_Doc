@@ -660,16 +660,9 @@
                             <div class="container">
                                 <h2>How to Remove Level Lock feature from Application?</h2>
 
-
-                                <li>Go to quiz > Quiz.xcworkspace > Quiz > LevelView.swift  </li>
-                                <p>If no need lock level, remove this code from here:</p>
-                                <img src="images/ios/level-lock-unlock.png"><br>
-                                <p>Also remove the highlighted boxed line from LevelView.swift file.</p>
-                                <img src="images/ios/level-lock-unlock3.png"><br>
-
-                                <li>Go to quiz > Quiz.xcworkspace > Quiz > ResultsViewController.swift </li>
-                                <p>Change this code from <code>@IBAction func nxtButton(_ sender: UIButton)</code> function </p>
-                                <img src="images/ios/level-lock-unlock2.png">
+                                <li>Go to quiz > Quiz.xcworkspace > Quiz > CollectionViewFiles > LevelView.swift  </li>
+                                <p>Find <b>extension LevelView</b> & change value of <b>self.unLockLevel</b> from Int("\(data!["level"]!)")! to self.maxLevel</p>
+                                <img src="images/ios/levelUnlockAll.png">
                                 <br>
                                 <br>
                                 </p>
