@@ -322,7 +322,7 @@
                         </header>
                         <div class="borderTop">
                             <ol class="alpha">
-                                <li><a href='#iosstart'>How to run Code?</a></li>
+                                <li><a href='#iosstart'>How to Setup & Run Code?</a></li>
                                 <li><a href='#iosadmin'>How to change server url & Access key in application?</a></li>
                                 <li><a href='#ioslaunchScreen'>How to change Launch screen / Splash screen in application?</a></li>
                                 <li><a href='#iosrealTimeDatabase'>Firebase Function Integration</a></li>
@@ -349,11 +349,16 @@
 
                         <section id="iosstart">
                             <div class="container">
-                                <h3>How to run Code?</h3>
+                                <h3>How to Setup & Run Code?</h3>
                                 <ul>
                                     <li>Open Terminal > write command <b>cd [Path Of Quiz Project]</b> & Press Enter & just Install Pods by using Command <b>pod install</b> </li>
                                     <li>go to Quiz in Finder > Open <b>Quiz.xcworkspace</b> File in Xcode</li>
                                 </ul>
+                                    <h4>Settings To Do Before Running your Code</h4>
+                                    <li>After Opening <b>Quiz.xcworkspace</b> File in Xcode, you need to change <b>Bundle Identifier</b> for your App as you want, do the same for ImageNotification [which we have added for Notifications with Image Support]</li>
+                                    Find both images here
+                                    <img src="images/ios/Quiz-BundleIdentifier.png"><br>
+                                    <img src="images/ios/imageNotification-BundleIdentifier.png"><br>
                                 <div class="section_bdr"></div>
                             </div>
                         </section>
@@ -363,9 +368,9 @@
                                 <h3>How to change admin page url, Access key and JWT Key in application?</h3>
                                 <ul>
                                     <li>go to Quiz > Quiz.xcworkspace > Quiz > ExtensionFile > QuizSetting.swift  </li>
-                                    <li>JWT is just like password you can create by your own & it must be same in Quiz App and PHP side as well. </li>
+                                    <li>JWT is just like password you can create by your own & it must be same in Quiz App and PHP side as well -> <a href="#admin"><b>Go To PHP Setting</b></a></li>
                                 </ul>
-                                <a href="#admin"><img src="images/ios/apiUrl.png"></a><br>
+                                <img src="images/ios/apiUrl.png"><br>
                                 <div class="section_bdr"></div>
                             </div>
                         </section>
@@ -377,7 +382,7 @@
                                 <li>go to Quiz > Quiz.xcworkspace > Quiz > LaunchScreen.storyboard file.</li>
                                 <li>Change Background Color Image & App Logo Image and Label Text there as Shown below.</li>
                                                                 </ul>
-                                <a href="#admin"><img src="images/ios/launchScreen.png"></a><br>
+                                <img src="images/ios/launchScreen.png"><br>
                                 <div class="section_bdr"></div>
                             </div>
                         </section>
@@ -397,12 +402,15 @@
                                         1. Click <b>Add Firebase to your iOS app</b> and follow the setup steps. If you're importing an existing Google project, this may happen automatically and you can just <a href="https://support.google.com/firebase/answer/7015592"> download the config file.</a>
                                         2. When prompted, enter your app's bundle ID. It's important to enter the bundle ID your app is using; this can only be set when you add the app to your Firebase project.
                                         3. Go to Database Tab, Then Select <b>Realtime Databse</b> > Rules > Set .read and .write to <b>true</b>.
-                                        <a href="#iosadmin"><img src="images/ios/Firebase-Rules.png"></a><br>
-                                    
+                                        <img src="images/ios/Firebase-Rules.png"><br>
                                         4. Add the Firebase iOS configuration file to your app:
                                         <li>Click <b>Download GoogleService-Info.plist</b> to obtain your Firebase iOS config file <code> (GoogleService-Info.plist)</code>.<br>
                                         You can download your <a href="https://support.google.com/firebase/answer/7015592">Firebase iOS config file</a> again at any time.</li>
                                         <li>Move your config file into the root of your Xcode project. If prompted, select to add the config file to all targets.</li>
+                                        Step 1 - Add Files to Quiz
+                                        <img src="images/ios/addFirebaseFIleInXCode.png"><br>
+                                        Step 2 - Select your GoogleService-Info.plist from Files [make sure to move it to Quiz Folder from Downloads folder first]
+                                        <img src="images/ios/addFirebaseFile.png">
                                         <li>* Note: The Firebase config file contains unique, but non-secret identifiers for your project.
                                         Visit <a href="https://firebase.google.com/docs/projects/learn-more#best-practices"> Understand Firebase Projects</a> to learn more about this config file.</li>
                                         5. After you add the initialization code, run your app to send verification to the Firebase console that you've successfully installed Firebase.
@@ -476,7 +484,7 @@
                                     <li><p>On the Signing &amp; Capabilities pane, <a href="https://help.apple.com/xcode/mac/current/#/deve21d0239c">set the bundle ID</a> to a unique identifier (you must change the bundle ID to proceed).</p></li>
                                     <li><p><a href="https://help.apple.com/xcode/mac/current/#/devaf282080a">Add your Apple ID account</a> and <a href="https://help.apple.com/xcode/mac/current/#/dev23aab79b4">assign the target to a team</a> so Xcode can enable the Sign in with Apple capability with your provisioning profile.</p></li>
                                     <li><p>Add Capability by clicking the + button. Search for Sign In with Apple Capability in Capability Library.</p>
-                                         <a href="#admin"><img src="images/ios/apple.png"></a>
+                                    <img src="images/ios/apple.png">
                                     </li>                                   
                                     <li><p>Choose a run destination from the scheme pop-up menu that you’re signed into with an Apple ID and that uses Two-Factor Authentication.</p></li>
                                     <li><p>If necessary, click Register Device in the Signing &amp; Capabilities pane to create the provisioning profile.</p></li>
@@ -588,7 +596,7 @@
                                 Don't forget to click <b>Save Settings</b>.</li><br>
 
 
-                                <a href="#admin"><img src="images/ios/sysConfig4.png"></a><br>
+                                <img src="images/ios/sysConfig4.png"><br>
                                 <br>
                                 </p>
 
