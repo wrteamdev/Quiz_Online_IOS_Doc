@@ -17,7 +17,6 @@
                 <ul>
                     <li><a href="#introduction" class="active">Introduction</a></li>
                     <li><a href="#admin_panel">Quiz Admin Panel</a>
-                    <li><a href="#quiz_web">Quiz Web</a>
                     <li><a href="#quiz_ios">Quiz IOS</a>
                     <li><a href="#support">Support</a></li>
                     <li><a href="#rating">Your Feedback</a></li>
@@ -71,7 +70,11 @@
                             </li>
                             <li>The installation screen should appear and guide you in the process.</li>
                         </ol>
-                        <p>Thats it! Now you are ready to run your Quiz Online.
+                        <p>Thats it! Now you are ready to run your Quiz Online : <b>https://quizdemo.wrteam.in</b><br><br>
+
+                            <b>Default Login Details</b><br>
+                            User: admin<br>
+                            Pass: admin123<br>
 
                         <div class="section_bdr"></div>
 
@@ -81,7 +84,7 @@
                         <div class="section_bdr"></div>
 
                         <h4 id="system-configurations">Set System Configurations</h4>
-                        <p>Set Configurations for you app. All the changes are maded here will directly reflect in the App</p>
+                        <p>Set Configurations for you app. All the changes are made here will directly reflect in the App</p>
                         <p>From here you can set System & App Timezone, App Play store or market place Link, Enable / Disable Answer Display, Language Mode, Option E Mode, Force Update App, Daily Quiz Mode, Contest Mode, Battle Random Category Mode, Battle Group Category Mode & In App Purchase. Manage App Version and Update Shareapp Text. Set fix Question in level</p>
                         <img src="images/panel/system-configurations.png" alt='System Configurations' title='System Configurations'>
                         <div class="section_bdr"></div>
@@ -108,212 +111,6 @@
                     </div>
                 </section>
 
-                <section id="quiz_web">
-                    <div class="container">
-                        <header class="major">
-                            <h3>Quiz Online Web</h3>
-                        </header>
-                        <div class="borderTop">
-                            <ol class="alpha">
-                                <li><a href='#admin'>How to change Domain Url to Web Quiz?</a></li>
-                                <li><a href='#create_Firebase'>Create Firebase Project for Web Quiz.</a></li>
-                                <li><a href='#realtime_Database'>Realtime Database.</a></li>
-                                <li><a href='#email_Login'>Authenticate Using Email and Password on Web Quiz With Firebase.</a></li>
-                                <li><a href='#google_Login'>Authenticate Using Google Sign-In on Web Quiz With Firebase.</a></li>
-                                <li><a href='#facebook_Login'>Authenticate Using Facebook Login on Web Quiz with Firebase.</a></li>
-                                <li><a href='#phone_Login'>Authenticate Using Phone Authentication on Web Quiz with Firebase.</a></li>
-                                <li><a href='#setting_Mode'>System Settings for Web Quiz.</a></li>
-                            </ol>
-                        </div>
-
-                        <section id="admin">
-                            <div class="container">
-                                <h3>How to change domain url in Web Quiz?</h3>
-                                <ul>
-                                    <li>Go to <code>assets > js > constant.js</code> </li>
-                                    <li>Set your DOMAIN_URL like this >>  'https://yourdomain.com/' <br/> <b>Note : </b>Especially don't forget to add <b>' forward slash '</b> at the end of the domain URL like this <code>'/'</code></li>
-                                    <li>JWT secret key is just like password & You can create your own. It should be same in Quiz Panel.<br> Replace <b>'set_your_strong_jwt_secret_key'</b> with your values. That's all</li>
-                                </ul>
-                                <img src="images/web/api-url.png">
-                                <div class="section_bdr"></div>
-                            </div>
-                        </section>
-
-                        <section id="create_Firebase">
-                            <div class="container">
-                                <h3>Create Firebase Project for Web Quiz.</h3>
-                                <ul>
-                                    <li>We need Firebase project for <b>Google Sign-In and Facebook Login.</b></li>
-                                    <li>here is steps for create project.</li>
-                                </ul>                        
-                                <ol>
-                                    <li>Goto 
-                                        <a href="https://console.firebase.google.com/" target="_blank" rel="noopener noreferrer">Firebase console.</a>
-                                    </li>
-                                    <li>Register new account or try to log in with existing accout
-                                        <img src='images/web/consolepage.png' alt="Console Page">
-                                    </li>
-                                    <li>Once logged in, you can see firebase console dashboard. Click on Add Project. Provide a project name and then after that click on Create Project. For example, see the below image.
-                                        <img src='images/web/AddProject.png' alt="Add Project">
-                                        <img src='images/web/CreateProject.png' alt="Create Project">
-                                    </li>
-                                    <li>Once the project has been created, it will automatically redirect to Firebase dashboard screen
-                                        <img src='images/web/Dashboard.png' alt="Dashboard">
-                                    </li>
-                                    <li>You need to add web project/application to the firebase project.
-                                        <img src='images/web/Dashboard_1.png' alt="Dashboard">
-                                    </li>
-                                    <li>As mentioned in an earlier image, you can add Firebase to your web app.
-                                        <img src='images/web/Add_webapp_1.png' alt="Add Web Quiz">
-                                    </li>
-                                    <li>Once the web quiz been added into Firebase, you'll get a web quiz configuration Javascript code.
-                                        <img src='images/web/firebase_config.png' alt="Web Quiz Configuration">                                
-                                    </li>
-                                    <li>Set above configuration code in quiz panel. <b>Go to Setting>>Web Firebase Settings menu</b>
-                                        <img src='images/web/firebase_config1.png' alt="Web Quiz Configuration">    
-                                    </li>
-                                </ol>
-                                <div class="section_bdr"></div>
-                            </div>
-                        </section>
-
-                        <section id="realtime_Database">
-                            <div class="container">
-                                <h3>Enable Realtime database in firebase console.</h3>                       
-                                <ul>                             
-                                    <li>Realtime database we use for battle feture.</li>
-                                    <li><p style="color:#8B0000">Use Database Default Location (us-central1) If you change then Battle Mode Not Working.</p>
-                                        <img src="images/web/db0.png" alt="Realtime database">
-                                        <img src="images/web/db.png" alt="Realtime database">
-                                    </li>
-                                    <li>
-                                        <a style="color:#8B0000">Realtime database rules must be true like below.because if user dont have read and right permission then they cannot play battle game.</a>
-                                        <img src="images//web/db1.png" alt="Realtime database">
-                                    </li>                            
-                                </ul>
-                                <div class="section_bdr"></div>
-                            </div>
-                        </section>
-
-                        <section id="email_Login">
-                            <div class="container">
-                                <h3>Authenticate Using Email and Password on Web With Firebase.</h3>
-                                <ul>
-                                    <li>First of all we have to enable <b>Google Sign-In</b> method in firebase console.</li>
-                                    <li>Now open your project in firebase console.</li>
-                                    <li>In the Firebase console, open the Auth section.</li>
-                                    <li>On the Sign in method tab, enable the Email/password sign-in method and click Save.</li>
-                                </ul>
-                                <img src="images/web/email_login1.png" alt="Email-Password">
-                                <img src="images/web/email_login2.png" alt="Email-Password"><br/>
-                                <h4 style="color:#8B0000">Only Change sender Name and Subject for verify email and reset Password.</h4>
-                                <img src="images/web/sub_1.png" alt="reset Password">
-                                <img src="images/web/sub_2.png" alt="reset Password">
-                                <div class="section_bdr"></div>
-                            </div>
-                        </section>
-
-                        <section id="google_Login">
-                            <div class="container">
-                                <h3>Authenticate Using Google Sign-In on Web With Firebase.</h3>
-                                <ul>
-                                    <li>First of all we have to enable <b>Google Sign-In</b> method in firebase console.</li>
-                                    <li>Now open your project in firebase console.
-                                        <img src="images/web/google_1.png" alt="Google Sign-In"><br><br>
-                                        <img src="images/web/google_2.png" alt="Google Sign-In"><br><br>                              
-                                    </li>
-                                    <li>
-                                        Now at the bottom of the page,  in "Authorized domains", localhost and a Firebase domain  are automatically added. Here we've to add domain name without http:// and https:// webquiz will get hosted.
-                                        <small>If you're using www as prefix of domain name then you must have to add that.</small>
-                                        <img src='images/web/firebase-authentication.png' alt="firebase authentication">
-                                    </li>
-                                    <li>Go to <a href="https://console.developers.google.com/" target="_blank">Google Developers Console</a></li>
-                                    <li>In the API & Services, open the Credentials section.</li>
-                                    <li>
-                                        Copy Client ID from OAuth 2.0 Client IDs in Credentials section and Paste in quiz panel. <b>Go to Setting>>Web Firebase Settings menu</b>
-                                        <img src="images/web/developer_console.png" alt="Developers Console">  
-                                    </li>                            
-                                </ul>
-                                <div class="section_bdr"></div>
-                            </div>
-                        </section>
-
-                        <section id="facebook_Login">
-                            <div class="container">
-                                <h3>Authenticate Using Facebook Login on Web with Firebase.</h3>
-                                <ul>
-                                    <li>You must configure your webquiz with <b>https</b></li>
-                                    <li>first create project for your application , go to  <a href="https://developers.facebook.com/" target="_blank">Facebook for Developers</a></li>
-                                    <li>Go to Facebook Quick Start Integrate the Facebook SDK</li>
-                                    <li>On the <a href="https://developers.facebook.com/" target="_blank">Facebook for Developers</a> site, get the <b>App ID</b> and an <b>App Secret</b> for your app. </li>
-                                    <li>Go to Setting > Basic, Add your app domain, without http:// and https://
-                                        <img src="images/web/fb_add_domain.png" alt="Facebook Login">
-                                    </li>
-                                    <li>In the <a href="https://console.firebase.google.com/u/0/" target="_blank">Firebase console</a>, open the <b>Auth</b> section. Enable Facebook Login.</li>
-                                    <li>On the <b>Sign in method</b> tab, enable the <b>Facebook</b> sign-in method and specify the <b>App ID</b> and <b>App Secret</b> you got from Facebook.
-                                        <a href="#facebook_Login"><img src="images/web/fb0.png"></a><br><br>
-                                    </li>
-                                    <li>Then, make sure your <b>OAuth redirect URI</b> (e.g. my-app-12345.firebaseapp.com/__/auth/handler) is listed as one of your <b>OAuth redirect URIs</b> in your Facebook app's settings page on the <a href="https://developers.facebook.com/" target="_blank">Facebook for Developers</a> site in the <b>Product Setting > Facebook Login</b> config </li>
-                                    <li>
-                                        Change Your Facebook app ID in quiz panel. <b>Go to Setting>>Web Firebase Settings menu</b>
-                                        <img src="images/web/firebase_config1.png" alt="Firebase">  
-                                    </li>
-                                </ul>
-                                <div class="section_bdr"></div>
-                            </div>
-                        </section>
-
-                        <section id="phone_Login">
-                            <div class="container">
-                                <h3>Authenticate Using Phone Authentication on Web with Firebase.</h3>
-                                <ol>
-                                    <li>
-                                        To enable phone authentication mode from the Firebase console. From the left sidebar there will be an option for Authentication. Once you click on the Authentication menu there will be an option for Sign-In Method.
-                                    </li>
-                                    <li>Once you click on Sign-In Method, a new list with the multiple sign in providers will appear. From that list you need to choose the Phone option to enable it. So you need to click on the pencil icon which will appear when you hover on Phone from the list. You need to eneble the phone authentication from the screen just like the below images.
-                                        <img src='images/web/PhoneMethod.png' alt="Phone Method">
-                                        <img src='images/web/EnablePhone.png' alt="Enable Phone">
-                                    </li>
-                                    <li>There will be an option to test authentication as well, so you can click on it. There, you need to provide the number. It will automatically send the verification code to the given number. In  this way you can test and verify the authentication using your phone number.
-                                        <img src='images/web/Verification.png' alt="Verification">
-                                    </li>                            
-                                </ol>
-                                <div class="section_bdr"></div>
-                            </div>
-                        </section>
-
-                        <section id="setting_Mode">
-                            <div class="container">
-                                <h3>System Settings for Web Quiz.</h3>
-                                <ul>
-                                    <li>Answer Display:= When User Give Wrong Answer You Can Enable and Disable Answer Show Or Not.</li>
-                                    <li>Language Mode:= Enable and Disable Language from admin panel.</li>
-                                    <li>Option E Mode:= Enable and Disable Opation E from admin panel.</li>
-                                    <li>Daily Quiz Mode:= Here you can Enable and Disable DailyQuiz button.</li>
-                                    <li>Contest Mode:= Here you can Enable and Disable Contest Button.
-                                        <img src="images/web/setting_mode.png" alt="System Settings">
-                                    </li>
-                                    <li>You Can set fix number of question per level.
-                                        <img src="images/web/levelNumber.png" alt="System Settings">
-                                    </li>
-                                    <li>You Can set Refer & Earn Coin from admin panel.
-                                        <img src="images/web/referearn.png" alt="System Settings">
-                                    </li>
-                                    <li>You can change True and False Value.
-                                        <img src="images/web/truefalse.png" alt="System Settings">
-                                    </li>                            
-                                    <li>About Us:= Add Your Company Details It Will Reflect in Web Quiz About Us .</li>
-                                    <li>Instructions:= Add Your Quiz Instructions It Will Reflect in Web Quiz Instrucations</li>
-                                    <li>Privacy Policy:= Add Your Quiz Privacy Policy It Will Reflect in Web Quiz Privacy Policy</li>
-                                    <li>Terms Conditions:= Add Your Quiz Terms Conditions It Will Reflect in Web Quiz Terms of Service
-                                        <img src="images/web/atip.png" alt="System Settings">
-                                    </li>                            
-                                </ul>
-                                <div class="section_bdr"></div>
-                            </div>
-                        </section>
-                    </div>
-                </section>
 
                 <section id="quiz_ios">
                     <div class="container">
